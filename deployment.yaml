@@ -14,7 +14,7 @@ spec:
         project: konf
     spec:
      containers:
-       - name- : nginx
-         image : antonivashevich/ngnix:latest
+       - name : nginx
+         image: antonivashevich/ngnix:latest
          ports:
            - containerPort: 80
