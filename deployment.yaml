@@ -1,0 +1,20 @@
+apiVersion : apps/v1
+kind: Deployment
+metadata:
+  name: my-test
+  labels:
+    app : pop
+spec:
+  selector:
+    matchLabels:
+      project: konf
+  template:
+    metadata:
+      labels:
+        project: konf
+    spec:
+     containers:
+       - name- : nginx
+         image : antonivashevich/ngnix:latest
+         ports:
+           - containerPort: 80
