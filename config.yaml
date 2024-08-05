@@ -2,7 +2,13 @@ apiVersion : v1
 kind: Pod
 metadata:
   name: jenkins
+  labels:
+    env : test
+    app : main
+    owner : mrivich
 spec:
   containers:
     - name : container-jenkins
       image: antonivashevich/jenkins
+      ports:
+        - containerPort: 80
