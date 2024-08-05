@@ -1,0 +1,39 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: my-test
+  labels:
+    app: pop
+spec:
+  selector:
+    matchLabels:
+      project: konf
+  template:
+    metadata:
+      labels:
+        project: konf #Service will look for those Pods Labels
+    spec:
+      containers:
+        - name: nginx
+          image: antonivashevich/jenkins:latest
+          ports:
+            - containerPort: 80
+
+---
+
+apiVersion: v1
+kind: Service
+metadata:
+  name: my-svc
+  labels:
+    lol : kek
+    owner : a.ivashevich
+spec:
+  selector:
+    progect: konf #Selecting PODS whith those Labels
+  ports:
+    - name: appy
+      protocol : TCP
+      port      : 80 #Port on LB
+      targetPort: 80 #Port on POD
+type: LoadBalancer
