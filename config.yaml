@@ -1,0 +1,8 @@
+apiVersion : v1
+kind: Pod
+metadata:
+  name: jenkins
+spec:
+  containers:
+    - name : container-jenkins
+      image: antonivashevich/jenkins
