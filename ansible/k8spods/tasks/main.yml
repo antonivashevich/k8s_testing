@@ -1,0 +1,22 @@
+---
+# tasks file for k8spods
+- name: Copy script
+   copy:
+    src: "./k8s.sh"
+    dest: "/home/qwe/k8s.sh"
+    owner: "qwe"
+    group: "qwe"
+    mode: "0755"
+- name: Copy maifest
+   copy:
+    src: "../../config.yaml"
+    dest: "/home/qwe/"
+    owner: "qwe"
+    group: "qwe"
+    mode: "0755"
+
+ - name: start script
+   shell: /home/qwe/k8s.sh
+   args:
+     executable: /bin/bash
+

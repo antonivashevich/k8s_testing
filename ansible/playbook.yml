@@ -1,0 +1,14 @@
+---
+- name: deploy pods k8s
+  hosts: staging_servers
+  become: yes
+
+
+  tasks:
+    - name: Ping
+      ping:
+  roles:
+    - role: k8spods
+      tags:
+        - k8spods
+

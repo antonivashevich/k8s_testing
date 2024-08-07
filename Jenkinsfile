@@ -7,6 +7,9 @@ pipeline {
                 script {
                     sh 'ls -la'
                     sh 'cat config.yaml'
+                    sh '''
+                        cd ansible
+                        ansible-playbook -vv -i hosts playbook.yml --tags k8spods
                 }
             }
         }
