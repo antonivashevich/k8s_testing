@@ -15,8 +15,8 @@
    group: "qwe"
    mode: "0755"
 
- - name: start script
-   shell: /home/qwe/k8s.sh
-   args:
-     executable: /bin/bash
+- name: start script
+  shell: /home/qwe/k8s.sh
+  args:
+    executable: /bin/bash
 
