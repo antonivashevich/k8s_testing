@@ -10,6 +10,7 @@ pipeline {
                     sh '''
                         cd ansible
                         ansible-playbook -vv -i hosts playbook.yml --tags k8spods
+                    '''
                 }
             }
         }
