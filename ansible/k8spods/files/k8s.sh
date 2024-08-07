@@ -1,2 +1,2 @@
-kubectl delete -f config.yaml
-kubectl apply -f config.yaml
+kubectl delete -f /home/qwe/config.yaml
+kubectl apply -f /home/qwe/config.yaml
